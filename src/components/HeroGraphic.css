@@ -1,0 +1,158 @@
+/* ===== CYBERNETIC CORE HERO GRAPHIC ===== */
+
+.hg-cyber-container {
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+  height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: visible;
+}
+
+.hg-cyber-grid {
+  position: absolute;
+  inset: 0;
+  background-image: 
+    linear-gradient(rgba(227, 27, 35, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(227, 27, 35, 0.05) 1px, transparent 1px);
+  background-size: 40px 40px;
+  mask-image: radial-gradient(circle, black, transparent 80%);
+  -webkit-mask-image: radial-gradient(circle, black, transparent 80%);
+  z-index: 0;
+}
+
+/* Cyber Core */
+.hg-cyber-core {
+  position: relative;
+  width: 160px;
+  height: 160px;
+  z-index: 5;
+}
+
+.core-inner-glow {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle, var(--red-primary), transparent 70%);
+  border-radius: 50%;
+  filter: blur(20px);
+  opacity: 0.4;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+.core-scanner {
+  position: absolute;
+  inset: -20px;
+  border: 2px solid rgba(227, 27, 35, 0.2);
+  border-radius: 50%;
+}
+
+.core-scanner::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-top: 2px solid var(--red-primary);
+  border-radius: 50%;
+  animation: rotate 2s linear infinite;
+}
+
+.c-circle {
+  position: absolute;
+  inset: 0;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+}
+
+.c1 { transform: rotateX(60deg) rotateY(10deg); animation: rotate 4s linear infinite; }
+.c2 { transform: rotateX(-60deg) rotateY(20deg); animation: rotate 6s linear infinite reverse; }
+.c3 { transform: rotateX(20deg) rotateY(70deg); animation: rotate 8s linear infinite; }
+
+/* Cyber Panels */
+.cyber-panel {
+  position: absolute;
+  background: rgba(10, 10, 15, 0.85);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(227, 27, 35, 0.3);
+  padding: 14px 20px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  z-index: 10;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5), 0 0 20px rgba(227, 27, 35, 0.1);
+}
+
+.p-icon {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(227, 27, 35, 0.1);
+  border-radius: 8px;
+  color: var(--red-primary);
+  font-size: 1rem;
+}
+
+.p-text { display: flex; flex-direction: column; }
+.p-val { font-family: var(--font-heading); font-size: 1rem; font-weight: 800; color: #fff; line-height: 1; }
+.p-lbl { font-size: 0.6rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; margin-top: 2px; }
+
+.p-top { top: 10%; left: 0; animation: float 6s ease-in-out infinite; }
+.p-right { top: 40%; right: -5%; animation: float 7s ease-in-out infinite 1s; }
+.p-bottom { bottom: 10%; left: 15%; animation: float 8s ease-in-out infinite 2s; }
+
+/* Data Streams */
+.stream {
+  position: absolute;
+  width: 2px;
+  height: 100px;
+  background: linear-gradient(to bottom, transparent, var(--red-primary), transparent);
+  opacity: 0.3;
+}
+
+.s1 { top: 20%; right: 20%; animation: streamDown 3s linear infinite; }
+.s2 { bottom: 10%; left: 30%; animation: streamDown 4s linear infinite 1s; }
+.s3 { top: 50%; left: 10%; animation: streamDown 5s linear infinite 2s; }
+
+@keyframes streamDown {
+  0% { transform: translateY(-100%); opacity: 0; }
+  50% { opacity: 0.5; }
+  100% { transform: translateY(200%); opacity: 0; }
+}
+
+/* Particles */
+.particle {
+  position: absolute;
+  width: 3px;
+  height: 3px;
+  background: var(--red-primary);
+  border-radius: 50%;
+  filter: blur(1px);
+}
+
+.p0 { top: 10%; left: 20%; animation: float 4s infinite; }
+.p1 { top: 30%; right: 10%; animation: float 5s infinite; }
+.p2 { bottom: 20%; left: 10%; animation: float 6s infinite; }
+.p3 { bottom: 40%; right: 20%; animation: float 7s infinite; }
+
+@keyframes rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* Mobile Adjustments */
+@media (max-width: 900px) {
+  .hg-cyber-container { height: 400px; transform: scale(0.9); }
+}
+
+@media (max-width: 600px) {
+  .hg-cyber-container { height: 320px; transform: scale(0.75); }
+  .hg-cyber-grid, .data-streams, .cyber-particles { display: none; }
+  .cyber-panel { padding: 10px 14px; }
+  .p-val { font-size: 0.9rem; }
+}

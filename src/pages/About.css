@@ -1,0 +1,316 @@
+/* ===== ABOUT PAGE ===== */
+.about-page {
+  position: relative;
+  z-index: 2;
+}
+
+/* Page hero banner */
+.page-hero {
+  padding: 160px 0 80px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.page-hero::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(to right, transparent, var(--border-subtle), transparent);
+}
+
+.page-hero-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-heading);
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-semibold);
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: var(--red-primary);
+  margin-bottom: 20px;
+}
+
+.page-hero-label::before,
+.page-hero-label::after {
+  content: '';
+  width: 30px;
+  height: 1px;
+  background: var(--gradient-primary);
+}
+
+.page-hero h1 {
+  font-size: var(--fs-h1);
+  font-weight: var(--fw-black);
+  margin-bottom: 20px;
+}
+
+.page-hero p {
+  font-size: clamp(1rem, 1.3vw, 1.15rem);
+  color: var(--text-secondary);
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+/* Story section */
+.about-story {
+  padding: 80px 0;
+}
+
+.about-story-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.about-story-content h2 {
+  font-size: var(--fs-h2);
+  font-weight: var(--fw-bold);
+  margin-bottom: 24px;
+}
+
+.about-story-content p {
+  color: var(--text-secondary);
+  line-height: 1.8;
+  margin-bottom: 16px;
+}
+
+.about-story-visual {
+  position: relative;
+  aspect-ratio: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Tech Stack Ecosystem Graphic */
+.tech-ecosystem {
+  width: 320px;
+  height: 320px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+}
+
+.ecosystem-center {
+  width: 100px;
+  height: 100px;
+  background: var(--bg-card);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--border-subtle);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 40px rgba(227, 27, 35, 0.2);
+  z-index: 10;
+}
+
+.ecosystem-logo {
+  width: 60px;
+  height: auto;
+  filter: drop-shadow(0 0 10px rgba(227, 27, 35, 0.5));
+}
+
+.orbit {
+  position: absolute;
+  border-radius: 50%;
+  border: 1px dashed rgba(255, 255, 255, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: spin linear infinite;
+}
+
+.orbit-1 { width: 180px; height: 180px; animation-duration: 20s; }
+.orbit-2 { width: 260px; height: 260px; animation-duration: 30s; animation-direction: reverse; }
+.orbit-3 { width: 340px; height: 340px; animation-duration: 40s; }
+
+.orbit-icon {
+  position: absolute;
+  width: 44px;
+  height: 44px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  color: var(--text-primary);
+  /* Counter-rotate to keep icons upright */
+  animation: spin-reverse linear infinite;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+.orbit-1 .orbit-icon { animation-duration: 20s; }
+.orbit-2 .orbit-icon { animation-duration: 30s; animation-direction: reverse; }
+.orbit-3 .orbit-icon { animation-duration: 40s; }
+
+.orbit-icon.wp { top: -22px; left: calc(50% - 22px); color: #21759b; }
+.orbit-icon.shopify { bottom: -22px; left: calc(50% - 22px); color: #95bf47; }
+.orbit-icon.react { left: -22px; top: calc(50% - 22px); color: #61dafb; }
+.orbit-icon.figma { right: -22px; top: calc(50% - 22px); color: #f24e1e; }
+.orbit-icon.node { top: 25px; left: 45px; color: #339933; }
+.orbit-icon.google { bottom: 25px; right: 45px; color: #4285f4; }
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes spin-reverse {
+  from { transform: rotate(360deg); }
+  to { transform: rotate(0deg); }
+}
+
+/* Mission/Vision */
+.about-mv {
+  padding: 80px 0;
+  background: var(--bg-secondary);
+}
+
+.about-mv-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.about-mv-card {
+  padding: 48px 36px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  transition: all var(--transition-base);
+}
+
+.about-mv-card:hover {
+  border-color: var(--border-glow);
+  transform: translateY(-4px);
+}
+
+.about-mv-card .mv-icon {
+  width: 56px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(227, 27, 35, 0.08);
+  border-radius: var(--radius-md);
+  color: var(--red-primary);
+  font-size: 1.3rem;
+  margin-bottom: 24px;
+}
+
+.about-mv-card h3 {
+  font-size: 1.5rem;
+  font-weight: var(--fw-bold);
+  margin-bottom: 16px;
+}
+
+.about-mv-card p {
+  color: var(--text-secondary);
+  line-height: 1.8;
+}
+
+/* Values */
+.about-values {
+  padding: 80px 0;
+}
+
+.about-values-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.about-values-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.value-card {
+  text-align: center;
+  padding: 40px 24px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  transition: all var(--transition-base);
+}
+
+.value-card:hover {
+  border-color: var(--border-glow);
+  transform: translateY(-4px);
+}
+
+.value-card .value-icon {
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(227, 27, 35, 0.08);
+  border-radius: 50%;
+  color: var(--red-primary);
+  font-size: 1.3rem;
+  margin: 0 auto 20px;
+}
+
+.value-card h4 {
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  font-weight: var(--fw-semibold);
+  margin-bottom: 10px;
+}
+
+.value-card p {
+  font-size: var(--fs-small);
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+@media (max-width: 900px) {
+  .about-story-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .about-mv-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about-values-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  
+  .about-story-visual {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+}
+
+@media (max-width: 600px) {
+  .about-values-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .tech-ecosystem {
+    transform: scale(0.85);
+  }
+}
+
+@media (max-width: 400px) {
+  .tech-ecosystem {
+    transform: scale(0.7);
+  }
+}

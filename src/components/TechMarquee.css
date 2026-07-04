@@ -1,0 +1,88 @@
+/* ===== TECH MARQUEE ===== */
+.tech-marquee {
+  padding: 40px 0;
+  border-top: 1px solid var(--border-subtle);
+  border-bottom: 1px solid var(--border-subtle);
+  overflow: hidden;
+  position: relative;
+  z-index: 2;
+}
+
+.marquee-label {
+  text-align: center;
+  font-family: var(--font-heading);
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-semibold);
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: var(--text-muted);
+  margin-bottom: 28px;
+}
+
+.marquee-track {
+  display: flex;
+  animation: marquee 30s linear infinite;
+  width: max-content;
+}
+
+.marquee-track:hover {
+  animation-play-state: paused;
+}
+
+.marquee-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 36px;
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  font-weight: var(--fw-medium);
+  color: var(--text-muted);
+  white-space: nowrap;
+  transition: color var(--transition-base);
+  cursor: default;
+}
+
+.marquee-item:hover {
+  color: var(--text-primary);
+}
+
+.marquee-item svg {
+  font-size: 1.4rem;
+  color: var(--text-muted);
+  transition: color var(--transition-base);
+}
+
+.marquee-item:hover svg {
+  color: var(--red-primary);
+}
+
+.marquee-divider {
+  color: var(--border-subtle);
+  font-size: 0.6rem;
+  padding: 0 8px;
+  display: flex;
+  align-items: center;
+}
+
+/* Fade edges */
+.tech-marquee::before,
+.tech-marquee::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 120px;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.tech-marquee::before {
+  left: 0;
+  background: linear-gradient(to right, var(--bg-primary), transparent);
+}
+
+.tech-marquee::after {
+  right: 0;
+  background: linear-gradient(to left, var(--bg-primary), transparent);
+}

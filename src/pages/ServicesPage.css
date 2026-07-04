@@ -1,0 +1,276 @@
+/* ===== SERVICES PAGE ===== */
+.services-page {
+  position: relative;
+  z-index: 2;
+}
+
+.services-detail-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 32px;
+}
+
+.service-detail-card {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding: 40px;
+  background: rgba(10, 10, 15, 0.6);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 20px;
+  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,0.02), 0 10px 30px rgba(0,0,0,0.5);
+}
+
+.service-detail-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 20px;
+  padding: 2px;
+  background: linear-gradient(135deg, rgba(255,255,255,0.2) 0%, transparent 40%, var(--red-primary) 100%);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* Add a tech grid background mask */
+.service-detail-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+  background-size: 20px 20px;
+  mask-image: radial-gradient(circle at top right, black, transparent 60%);
+  -webkit-mask-image: radial-gradient(circle at top right, black, transparent 60%);
+  z-index: -1;
+  pointer-events: none;
+}
+
+.service-detail-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.8), 0 0 40px rgba(227,27,35,0.15);
+  border-color: transparent;
+}
+
+.service-detail-card:hover::before {
+  opacity: 1;
+}
+
+.service-detail-icon {
+  width: 64px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(227, 27, 35, 0.05);
+  border: 1px solid rgba(227, 27, 35, 0.15);
+  border-radius: 20px;
+  color: var(--red-primary);
+  font-size: 1.8rem;
+  transition: all 0.5s ease;
+  position: relative;
+}
+
+/* Orbital ring around icon */
+.service-detail-icon::after {
+  content: '';
+  position: absolute;
+  inset: -8px;
+  border: 1px dashed rgba(227, 27, 35, 0.3);
+  border-radius: 50%;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.service-detail-card:hover .service-detail-icon::after {
+  opacity: 1;
+  animation: rotate 8s linear infinite;
+}
+
+.service-detail-card:hover .service-detail-icon {
+  transform: scale(1.05);
+  box-shadow: 0 0 30px rgba(227, 27, 35, 0.2);
+  background: rgba(227, 27, 35, 0.15);
+}
+
+.service-detail-content {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.service-detail-content h3 {
+  font-family: var(--font-heading);
+  font-size: 1.4rem;
+  font-weight: var(--fw-bold);
+  margin-bottom: 12px;
+  transition: color 0.3s ease;
+}
+
+.service-detail-card:hover .service-detail-content h3 {
+  color: var(--red-primary);
+}
+
+.service-detail-content p {
+  font-size: var(--fs-small);
+  color: rgba(255,255,255,0.7);
+  line-height: 1.7;
+}
+
+.service-detail-features {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: auto;
+  padding-top: 24px;
+  border-top: 1px solid rgba(255,255,255,0.05);
+}
+
+.service-feature-tag {
+  padding: 6px 12px;
+  font-size: 0.7rem;
+  font-family: monospace;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-weight: var(--fw-medium);
+  background: rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 6px;
+  color: rgba(255,255,255,0.7);
+  transition: all 0.3s ease;
+}
+
+.service-detail-card:hover .service-feature-tag {
+  background: rgba(227, 27, 35, 0.1);
+  border-color: rgba(227, 27, 35, 0.4);
+  color: #fff;
+  box-shadow: 0 0 10px inset rgba(227, 27, 35, 0.1);
+}
+
+/* Process timeline */
+.process-section {
+  padding: 80px 0;
+  background: var(--bg-secondary);
+}
+
+.process-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.process-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  position: relative;
+}
+
+.process-grid::before {
+  content: '';
+  position: absolute;
+  top: 40px;
+  left: 10%;
+  right: 10%;
+  height: 2px;
+  background: rgba(255,255,255,0.05);
+  z-index: 0;
+}
+
+/* Animated glowing pulse line */
+.process-grid::after {
+  content: '';
+  position: absolute;
+  top: 40px;
+  left: 10%;
+  width: 80%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--red-primary), transparent);
+  background-size: 200% 100%;
+  animation: pulseLine 3s linear infinite;
+  z-index: 0;
+  box-shadow: 0 0 10px var(--red-primary);
+}
+
+@keyframes pulseLine {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+.process-step {
+  position: relative;
+  text-align: center;
+  z-index: 1;
+}
+
+.process-step-number {
+  width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 24px;
+  background: var(--bg-card);
+  border: 2px solid rgba(255,255,255,0.05);
+  border-radius: 50%;
+  font-family: monospace;
+  font-size: 1.5rem;
+  font-weight: var(--fw-bold);
+  color: var(--text-secondary);
+  transition: all var(--transition-base);
+  position: relative;
+}
+
+.process-step:hover .process-step-number {
+  border-color: var(--red-primary);
+  color: #fff;
+  background: rgba(227,27,35,0.1);
+  box-shadow: 0 0 20px rgba(227,27,35,0.3), inset 0 0 15px rgba(227,27,35,0.2);
+  transform: scale(1.1);
+}
+
+.process-step h4 {
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  font-weight: var(--fw-semibold);
+  margin-bottom: 8px;
+}
+
+.process-step p {
+  font-size: var(--fs-small);
+  color: var(--text-secondary);
+  line-height: 1.6;
+  max-width: 220px;
+  margin: 0 auto;
+}
+
+@media (max-width: 900px) {
+  .process-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+  }
+  .process-grid::before {
+    display: none;
+  }
+  .services-detail-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .process-grid {
+    grid-template-columns: 1fr;
+  }
+  .service-detail-card {
+    padding: 28px 24px;
+  }
+}
