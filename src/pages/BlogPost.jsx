@@ -44,7 +44,7 @@ export default function BlogPost() {
         </div>
 
         <div className="blog-post-hero-image">
-          <img src={post.image} alt={post.title} />
+          <img src={`${import.meta.env.BASE_URL.slice(0, -1)}${post.image}`} alt={post.title} />
         </div>
 
         <article className="blog-post-content" dangerouslySetInnerHTML={{ __html: post.content }} />

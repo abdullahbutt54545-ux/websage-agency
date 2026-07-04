@@ -59,7 +59,7 @@ export default function About() {
                   <div className="orbit-icon google"><FaGoogle /></div>
                 </div>
                 <div className="ecosystem-center">
-                  <img src="/logo.png" alt="WebSage Core" className="ecosystem-logo" />
+                  <img src={`${import.meta.env.BASE_URL}logo.png`} alt="WebSage Core" className="ecosystem-logo" />
                 </div>
               </div>
             </div>

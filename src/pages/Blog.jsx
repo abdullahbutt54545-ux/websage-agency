@@ -31,7 +31,7 @@ export default function Blog() {
           <div className="blog-grid reveal">
             {blogPosts.map((post) => (
               <article key={post.id} className="blog-card stagger-child">
-                <div className="blog-card-image" style={{ backgroundImage: `url(${post.image})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
+                <div className="blog-card-image" style={{ backgroundImage: `url(${import.meta.env.BASE_URL.slice(0, -1)}${post.image})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
                   <span className="blog-card-category" style={{ background: post.color }}>{post.category}</span>
                 </div>
                 <div className="blog-card-body">

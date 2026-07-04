@@ -9,6 +9,10 @@ export default function SEO({
   url = "https://websageagency.com",
   image = "/logo.png"
 }) {
+  const absoluteImage = image.startsWith('http') 
+    ? image 
+    : `${window.location.origin}${import.meta.env.BASE_URL.slice(0, -1)}${image}`;
+
   return (
     <Helmet>
       {/* Standard metadata tags */}
@@ -21,13 +25,13 @@ export default function SEO({
       <meta property="og:description" content={description} />
       <meta property="og:type" content={type} />
       <meta property="og:url" content={url} />
-      <meta property="og:image" content={image} />
+      <meta property="og:image" content={absoluteImage} />
 
       {/* Twitter Card tags */}
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={description} />
-      <meta name="twitter:image" content={image} />
+      <meta name="twitter:image" content={absoluteImage} />
     </Helmet>
   );
 }

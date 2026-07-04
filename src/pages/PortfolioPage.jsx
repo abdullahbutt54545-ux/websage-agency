@@ -66,7 +66,7 @@ export default function PortfolioPage() {
                     <div className="portfolio-card-spinner" />
                   )}
                   <img
-                    src={item.image}
+                    src={`${import.meta.env.BASE_URL.slice(0, -1)}${item.image}`}
                     alt={item.title}
                     className={`portfolio-card-image${loadedImages[item.id] ? ' loaded' : ''}`}
                     loading="lazy"

@@ -36,7 +36,7 @@ export default function Navbar() {
     <nav className={`navbar${scrolled ? ' scrolled' : ''}`} id="main-navbar">
       <div className="navbar-inner">
         <Link to="/" className="nav-logo">
-          <img src="/logo.png" alt="WebSage Agency Logo" className={scrolled ? 'logo-img-scrolled' : ''} />
+          <img src={`${import.meta.env.BASE_URL}logo.png`} alt="WebSage Agency Logo" className={scrolled ? 'logo-img-scrolled' : ''} />
           <div className="nav-logo-text-container">
             <span className={`nav-logo-full ${scrolled ? 'hidden' : ''}`}>Web<span>Sage</span> Agency</span>
             <span className={`nav-logo-short ${scrolled ? 'visible' : ''}`}>WS</span>

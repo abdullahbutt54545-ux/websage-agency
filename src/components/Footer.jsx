@@ -9,7 +9,7 @@ export default function Footer() {
         <div className="footer-main">
           <div className="footer-brand">
             <Link to="/" className="footer-logo">
-              <img src="/logo.png" alt="WebSage Agency" />
+              <img src={`${import.meta.env.BASE_URL}logo.png`} alt="WebSage Agency" />
               <span className="footer-logo-text">Web<span>Sage</span> Agency</span>
             </Link>
             <p className="footer-desc">
