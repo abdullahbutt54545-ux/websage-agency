@@ -44,10 +44,23 @@
       ]
     }
     </script>
-    <script type="module" crossorigin src="/websage-agency/assets/index.45bc6d03.js"></script>
+    <script type="module" crossorigin src="/websage-agency/assets/index.8f4a0946.js"></script>
     <link rel="stylesheet" href="/websage-agency/assets/index.881d1e80.css">
   </head>
   <body>
+    <!-- GitHub Pages SPA redirect handler -->
+    <script>
+      (function(l) {
+        if (l.search[1] === '/') {
+          var decoded = l.search.slice(1).split('&').map(function(s) {
+            return s.replace(/~and~/g, '&')
+          }).join('?');
+          window.history.replaceState(null, null,
+            l.pathname.slice(0, -1) + decoded + l.hash
+          );
+        }
+      }(window.location))
+    </script>
     <div id="root"></div>
     
   </body>
