@@ -4,6 +4,7 @@
   z-index: 2;
   border-top: 1px solid var(--border-subtle);
   background: var(--bg-secondary);
+  overflow: hidden;
 }
 
 .footer-main {
@@ -27,6 +28,7 @@
 
 .footer-logo img {
   height: 40px;
+  border-radius: 8px;
 }
 
 .footer-logo-text {

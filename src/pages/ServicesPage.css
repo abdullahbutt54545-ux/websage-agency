@@ -258,7 +258,8 @@
     grid-template-columns: 1fr 1fr;
     gap: 40px;
   }
-  .process-grid::before {
+  .process-grid::before,
+  .process-grid::after {
     display: none;
   }
   .services-detail-grid {

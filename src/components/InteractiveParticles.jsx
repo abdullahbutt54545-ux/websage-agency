@@ -9,7 +9,7 @@ export default function InteractiveParticles() {
     let animationFrameId
     
     let particles = []
-    const particleCount = 180
+    const particleCount = window.innerWidth <= 768 ? 90 : 180
     const mouse = { x: null, y: null, radius: 250 }
 
     const resize = () => {

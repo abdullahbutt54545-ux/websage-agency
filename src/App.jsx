@@ -12,6 +12,7 @@ import Blog from './pages/Blog'
 import BlogPost from './pages/BlogPost'
 import FAQPage from './pages/FAQPage'
 import Contact from './pages/Contact'
+import NotFound from './pages/NotFound'
 import AIWidget from './components/AIWidget'
 import './App.css'
 
@@ -39,6 +40,7 @@ function App() {
           <Route path="/blog/:slug" element={<BlogPost />} />
           <Route path="/faq" element={<FAQPage />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </main>
       <Footer />

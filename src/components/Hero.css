@@ -217,4 +217,14 @@
   .hero-stat-number {
     font-size: 1.8rem;
   }
+
+  .hero-stats {
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  
+  .hero-stat {
+    text-align: center;
+    flex: 1 1 40%;
+  }
 }
