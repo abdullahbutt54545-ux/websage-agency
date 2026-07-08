@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { FaPhone, FaEnvelope, FaMapMarkerAlt, FaFacebookF, FaInstagram, FaLinkedinIn, FaPaperPlane } from 'react-icons/fa'
+import { FaWhatsapp, FaEnvelope, FaMapMarkerAlt, FaFacebookF, FaInstagram, FaLinkedinIn, FaPaperPlane } from 'react-icons/fa'
 import AnimatedBackground from '../components/AnimatedBackground'
 import useScrollReveal from '../components/ScrollReveal'
 import SEO from '../components/SEO'
@@ -64,10 +64,10 @@ export default function Contact() {
               <p>Whether you need a WordPress site, Shopify store, SEO strategy, or a complete brand overhaul — we're here to help. Reach out and let's make it happen.</p>
 
               <div className="contact-cards">
-                <a href="tel:+923316637318" className="contact-card">
-                  <div className="contact-card-icon"><FaPhone /></div>
+                <a href="https://wa.me/923316637318" className="contact-card" target="_blank" rel="noopener noreferrer">
+                  <div className="contact-card-icon"><FaWhatsapp /></div>
                   <div className="contact-card-text">
-                    <h4>Phone</h4>
+                    <h4>WhatsApp</h4>
                     <p>+92 331 6637318</p>
                   </div>
                 </a>

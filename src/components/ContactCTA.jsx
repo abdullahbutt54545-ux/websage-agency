@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { FaPhone, FaEnvelope, FaRocket } from 'react-icons/fa'
+import { FaWhatsapp, FaEnvelope, FaRocket } from 'react-icons/fa'
 import useScrollReveal from './ScrollReveal'
 import './ContactCTA.css'
 
@@ -17,14 +17,14 @@ export default function ContactCTA() {
               <Link to="/contact" className="btn btn-primary">
                 Start Your Project <FaRocket />
               </Link>
-              <a href="tel:+923316637318" className="btn btn-outline">
-                Call Us Now
+              <a href="https://wa.me/923316637318" className="btn btn-outline" target="_blank" rel="noopener noreferrer">
+                WhatsApp Us
               </a>
             </div>
             <div className="contact-cta-info">
               <div className="contact-cta-item">
-                <FaPhone />
-                <a href="tel:+923316637318">+92 331 6637318</a>
+                <FaWhatsapp />
+                <a href="https://wa.me/923316637318" target="_blank" rel="noopener noreferrer">+92 331 6637318</a>
               </div>
               <div className="contact-cta-item">
                 <FaEnvelope />

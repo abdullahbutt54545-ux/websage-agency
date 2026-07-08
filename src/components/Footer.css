@@ -103,6 +103,11 @@
   transform: translateX(4px);
 }
 
+/* WhatsApp icon slightly larger in footer */
+.footer-link svg:first-child {
+  font-size: 1.25rem;
+}
+
 /* Bottom bar */
 .footer-bottom {
   padding: 24px 0;

@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { FaFacebookF, FaInstagram, FaLinkedinIn, FaPhone, FaEnvelope } from 'react-icons/fa'
+import { FaFacebookF, FaInstagram, FaLinkedinIn, FaWhatsapp, FaEnvelope } from 'react-icons/fa'
 import './Footer.css'
 
 export default function Footer() {
@@ -55,8 +55,8 @@ export default function Footer() {
           <div className="footer-column">
             <h4>Contact</h4>
             <div className="footer-links">
-              <a href="tel:+923316637318" className="footer-link">
-                <FaPhone /> +92 331 6637318
+              <a href="https://wa.me/923316637318" className="footer-link" target="_blank" rel="noopener noreferrer">
+                <FaWhatsapp /> +92 331 6637318
               </a>
               <a href="mailto:contact.websageagency@gmail.com" className="footer-link">
                 <FaEnvelope /> contact.websageagency@gmail.com
